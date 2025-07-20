@@ -1,0 +1,118 @@
+/* Repository.css */
+
+:root {
+  --bg-body: linear-gradient(to right, #1e3c72, #2a5298);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --accent-color: #90caf9;
+  --font-stack: "Inter", "Segoe UI", sans-serif;
+  --transition: all 0.3s ease-in-out;
+}
+
+.repository-container {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.repository-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.repo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.repo-card {
+  backdrop-filter: blur(10px);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.repo-card:hover {
+  transform: scale(1.03);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 30px rgba(144, 202, 249, 0.3);
+}
+
+.repo-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.repo-name:hover {
+  text-decoration: underline;
+}
+
+.repo-description {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: #dfe6f3;
+}
+
+.repo-meta {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  color: #b0bec5;
+}
+
+.repo-meta span {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #90caf9;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.back-button:hover {
+  background-color: rgba(144, 202, 249, 0.1);
+  border-color: #90caf9;
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+.back-icon {
+  font-size: 1.2rem;
+}
+
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

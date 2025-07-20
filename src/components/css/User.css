@@ -1,0 +1,70 @@
+.user-card {
+  background-color: #161b22;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  color: #c9d1d9;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+}
+
+.user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #58a6ff;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  color: #8b949e;
+}
+
+.user-icon {
+  color: #58a6ff;
+  font-size: 1.2rem;
+}
+
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #c9d1d9;
+}
+
+.user-link {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #238636;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.user-link:hover {
+  background-color: #2ea043;
+}
