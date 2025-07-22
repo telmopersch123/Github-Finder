@@ -25,7 +25,7 @@ const Search = ({ loadUser }: UserProps) => {
   return (
     <div className="search-container">
       <h2>Busque por um usuário:</h2>
-      <p>Conheça seus melhores repositórios</p>
+      <p>Conheça os melhores repositórios</p>
       <form onSubmit={handleSubmit} className="search-form">
         <input
           type="text"

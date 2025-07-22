@@ -17,16 +17,27 @@ const Repository = () => {
   const { login } = useParams<{ login: string }>();
   const [repos, setRepos] = useState<RepoProps[]>([]);
 
+  console.log(login);
+
   useEffect(() => {
     const getRepos = async () => {
       try {
-        const resp = await fetch(`https://api.github.com/users/${login}/repos`);
+        const resp = await fetch(
+          `https://api.github.com/users/${login}/repos?per_page=50&sort=created&direction=desc`,
+          {
+            headers: {
+              Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
+            },
+          }
+        );
         const data = await resp.json();
+        console.log(data);
         setRepos(data);
       } catch (error) {
         console.error("Erro ao buscar repositórios:", error);
       }
     };
+
     getRepos();
   }, [login]);
 
@@ -37,7 +48,7 @@ const Repository = () => {
       </Link>
 
       <h1 className="repository-title">
-        Repositórios de {login || "usuário desconhecido"}
+        Repositórios mais recentes de(a) {login || "usuário desconhecido"}
       </h1>
 
       <div className="repo-list">

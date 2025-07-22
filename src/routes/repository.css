@@ -31,15 +31,19 @@
 }
 
 .repo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui o conteúdo verticalmente */
   backdrop-filter: blur(10px);
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem; /* mais espaçamento lateral */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  min-height: 220px; /* altura mínima para consistência */
 }
 
 .repo-card:hover {
@@ -50,10 +54,12 @@
 
 .repo-name {
   font-size: 1.4rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--accent-color);
   text-decoration: none;
   transition: var(--transition);
+  margin-bottom: 0.6rem;
+  word-break: break-word; /* evita overflow */
 }
 
 .repo-name:hover {
@@ -62,21 +68,26 @@
 
 .repo-description {
   font-size: 1rem;
-  margin: 1rem 0;
+  margin: 0 0 1.2rem 0;
   color: #dfe6f3;
+  flex-grow: 1; /* faz descrição ocupar o espaço disponível */
+  line-height: 1.4;
 }
 
 .repo-meta {
   font-size: 0.9rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1rem; /* espaço entre os spans */
   color: #b0bec5;
+  flex-wrap: wrap; /* para não quebrar em telas pequenas */
 }
 
 .repo-meta span {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 0.3rem 0.7rem;
   border-radius: 8px;
+  white-space: nowrap; /* evita quebra dentro dos badges */
 }
 
 .back-button {
@@ -86,12 +97,12 @@
   padding: 0.6rem 1.2rem;
   background-color: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #90caf9;
+  color: var(--accent-color);
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   backdrop-filter: blur(8px);
 
   position: absolute;
@@ -101,7 +112,7 @@
 
 .back-button:hover {
   background-color: rgba(144, 202, 249, 0.1);
-  border-color: #90caf9;
+  border-color: var(--accent-color);
   color: #ffffff;
   transform: translateX(-4px);
 }

@@ -1,9 +1,11 @@
 .search-container {
+  width: 100%;
   text-align: center;
   padding: 2rem;
   background-color: #161b22;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -84,4 +86,12 @@
 
 .search-form button:active {
   transform: scale(0.98);
+}
+
+@media screen and (max-width: 600px) {
+  .search-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
 }

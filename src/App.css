@@ -1,16 +1,25 @@
 body {
   background-color: #0d1117;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
-
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 .app-container {
+  max-width: 1200px;
   padding: 2rem;
   border-radius: 10px;
-  width: 100%;
-  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100%;
+    padding: 0rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -18,6 +27,10 @@ body {
     max-width: auto;
     padding: 0rem;
   }
+}
+
+a {
+  color: #58a6ff;
 }
 
 h1 {
